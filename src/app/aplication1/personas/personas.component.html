@@ -1,0 +1,35 @@
+ 
+ <h4>Listado general</h4>
+ 
+
+<hr>
+<button (click)="onAgregarNuevaPersona()" class="btn btn-primary"><i class="bi bi-plus-circle me-1"></i>Agregar nueva persona</button>
+
+ <hr>
+ 
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>DNI</th>
+            <th>Fecha Nacimiento</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of personas">
+            <td>{{ persona.nombres }}</td>
+            <td>{{ persona.apellidos }}</td>
+            <td>{{ persona.documentoIdentidad }}</td>
+            <td>{{ persona.fechaNacimiento|date }}</td>
+            <td>{{  estadoDescription(  persona.estado!) }}</td>
+            <td>
+                <button class="btn btn-secondary me-1" (click)="onEditar(persona.id!)"><i class="bi bi-filter-circle me-1"></i>Editar</button>
+                <button class="btn btn-danger" (click)="onEliminar(persona.id!)" ><i class="bi bi-x-circle me-1" ></i>Eliminar</button>
+            </td> 
+        </tr>
+    </tbody>
+</table>
+  

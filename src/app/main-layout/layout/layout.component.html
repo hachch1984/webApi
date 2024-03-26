@@ -1,0 +1,66 @@
+<div class="vh-100 vw-100  d-flex flex-column">
+    <header class="text-bg-dark py-2">
+
+
+        <div
+            class="container  d-flex  text-bg-dark">
+
+            <button *ngIf="isCanvas()===true" class="btn btn-outline-light me-2" title="show menu items" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i
+                    class="bi bi-list"></i></button>
+
+           <div  class=" flex-grow-1 d-flex justify-content-center align-items-center">
+            <h5>Reto tecnico</h5>
+           </div>
+        </div>
+    </header>
+
+    @if(isCanvas())
+    {
+
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasTop"
+        aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-header ">
+            <h5 class="offcanvas-title" id="offcanvasTopLabel">Menu Items</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <mainLayout-menu></mainLayout-menu>
+        </div>
+    </div>
+
+    <div class="flex-grow-1">
+        <router-outlet></router-outlet>
+    </div>
+
+    }
+    @else
+    {
+    <div class="flex-grow-1 d-flex flex-row">
+        <mainLayout-menu style="width: 250px;"></mainLayout-menu>
+
+
+
+        <router-outlet></router-outlet>
+    </div>
+    }
+
+
+    <footer class="text-bg-dark">
+        <div class="container d-flex  flex-wrap justify-content-between align-items-center py-2     ">
+            <div class="col-md-4 d-flex align-items-center">
+                <span class="mb-3 mb-md-0  ">© 2024 Company, Inc</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex ">
+                <li class="ms-3"><a class="text-decoration-none " href="#"> <i class="bi bi-twitter"></i></a> </li>
+                <li class="ms-3"><a class="text-decoration-none " href="#"> <i class="bi bi-facebook"></i></a> </li>
+                <li class="ms-3"><a class="text-decoration-none " href="#"> <i class="bi bi-instagram"></i></a> </li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+</div>

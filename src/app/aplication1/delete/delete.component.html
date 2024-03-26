@@ -1,0 +1,38 @@
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <h5 class="alert alert-danger" role="alert">Eliminar Persona</h5>
+    <div class="form-group mt-2">
+        <label for="name">Nombres</label>
+        <input type="text" class="form-control" id="nombres" formControlName="nombres" readonly >
+       
+    </div>
+    <div class="form-group mt-2">
+        <label for="age">Apellidos</label>
+        <input type="numtextber" class="form-control" id="apellidos" formControlName="apellidos" readonly>
+       
+    </div>
+    <div class="form-group mt-2">
+        <label for="age">Dni</label>
+        <input type="text" class="form-control" id="documentoIdentidad" formControlName="documentoIdentidad" readonly>
+        
+    </div>
+    <div class="form-group mt-2">
+        <label for="age">Fecha Nacimiento</label>
+        <input type="date" class="form-control" id="fechaNacimiento" formControlName="fechaNacimiento" readonly>
+       
+    </div>
+    <div class="form-group mt-2">
+        <label for="activo">Estado {{estadoInformation()}}</label>
+        
+       
+    </div>
+
+    
+   <div class="mt-2">
+
+    <button type="submit" class="btn btn-danger me-1"><i class="bi bi-trash3 me-1"></i>Proceder con la eliminacion</button>
+    <button type="button" class="btn btn-secondary" (click)="onCancel()"><i class="bi bi-x-diamond me-1"></i>Cancelar</button>
+   </div>
+   
+   
+</form>
